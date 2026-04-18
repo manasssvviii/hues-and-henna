@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs & temp
+*.log
+*.tmp
+
+# Reference folder (raw WhatsApp exports, not part of the site)
+Reference/

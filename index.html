@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hues & Henna | Manasvi</title>
+    <title>Hues &amp; Henna | Manasvi</title>
     <meta
       name="description"
       content="Henna services by Manasvi in Mauritius. View full prices, about details, and book directly on WhatsApp."
     />
-    <meta property="og:title" content="Hues & Henna | Manasvi" />
+    <meta property="og:title" content="Hues &amp; Henna | Manasvi" />
     <meta
       property="og:description"
       content="Custom henna in Mauritius. Check prices and message Manasvi on WhatsApp."
@@ -26,8 +26,14 @@
   <body>
     <div class="page-glow" aria-hidden="true"></div>
 
+    <!-- floating decorative shapes -->
+    <span class="deco-float" aria-hidden="true" style="top:8%;left:4%;font-size:3.2rem;animation-duration:7s;">✿</span>
+    <span class="deco-float" aria-hidden="true" style="top:28%;right:3%;font-size:2rem;animation-duration:9s;animation-delay:1.5s;">♥</span>
+    <span class="deco-float" aria-hidden="true" style="top:55%;left:2%;font-size:1.6rem;animation-duration:8s;animation-delay:3s;">✦</span>
+    <span class="deco-float" aria-hidden="true" style="top:75%;right:4%;font-size:2.8rem;animation-duration:10s;animation-delay:0.8s;">✿</span>
+
     <header class="site-header">
-      <a href="index.html" class="brand-link">Hues & Henna</a>
+      <a href="index.html" class="brand-link">Hues &amp; Henna</a>
       <nav class="top-nav" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#pricing">Pricing</a>
@@ -48,8 +54,8 @@
           <p class="eyebrow">By Manasvi</p>
           <h1>Cute and custom henna, made with care.</h1>
           <p>
-            I create hand-drawn designs for everyday plans, events, and custom
-            ideas. Share a reference and we can personalize it together.
+            Hand-drawn designs for everyday plans, events, and custom ideas.
+            Share a reference and we can personalize it together.
           </p>
           <div class="hero-actions">
             <a
@@ -59,7 +65,7 @@
               rel="noopener noreferrer"
               >Message on WhatsApp</a
             >
-            <a class="btn btn-soft" href="references.html">View all references</a>
+            <a class="btn btn-soft" href="references.html">View all designs</a>
           </div>
         </div>
         <div class="hero-image-wrap">
@@ -74,12 +80,12 @@
 
       <section class="about card reveal" id="about">
         <div class="about-content">
-          <h2>About Hues and Henna</h2>
+          <h2>About Hues &amp; Henna</h2>
           <p>
             Based in Mauritius, I specialize in custom henna designs crafted
-            with care and attention to detail. As an amateur artist beginning
-            this creative journey, I am focused on learning, growing, and giving
-            each client a personal and authentic experience.
+            with care and attention to detail. As an artist on this creative
+            journey, I focus on learning, growing, and giving each client a
+            personal and authentic experience.
           </p>
           <p>
             Whether it is for a special occasion or a little self-care, I am
@@ -108,7 +114,7 @@
       <section class="pricing card reveal" id="pricing">
         <div class="section-head">
           <h2>Henna pricing</h2>
-          <p>Clear rates from the price list, now integrated directly here.</p>
+          <p>Clear rates, straight from the price list.</p>
         </div>
 
         <div class="pricing-grid">
@@ -164,8 +170,8 @@
           </figure>
           <figure>
             <img
-              src="assets/gallery/hands/hands-15.jpeg"
-              alt="Sample detailed mehendi"
+              src="assets/gallery/hands/hands-13.jpeg"
+              alt="Sample detailed mehendi on both hands"
               loading="lazy"
             />
           </figure>
@@ -179,7 +185,7 @@
           <figure>
             <img
               src="assets/gallery/back/back-featured.jpeg"
-              alt="Sample back henna design"
+              alt="Sample back henna designs"
               loading="lazy"
             />
           </figure>
@@ -190,7 +196,7 @@
         <h2>Book with Manasvi</h2>
         <p>
           Send your preferred style, date, and budget on WhatsApp and I will
-          help you choose the best design.
+          help you choose the perfect design.
         </p>
         <a
           class="btn btn-primary"
@@ -209,5 +215,44 @@
       rel="noopener noreferrer"
       >WhatsApp Booking</a
     >
+
+    <script>
+      // Heart cursor trail
+      (function () {
+        var glyphs = ["♥", "✦", "✿", "♡", "❀"];
+        var last = 0;
+        document.addEventListener("mousemove", function (e) {
+          var now = Date.now();
+          if (now - last < 90) return;
+          last = now;
+          var el = document.createElement("span");
+          el.className = "heart-trail";
+          el.setAttribute("aria-hidden", "true");
+          el.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+          el.style.left = e.clientX + "px";
+          el.style.top = e.clientY + "px";
+          el.style.fontSize = (0.55 + Math.random() * 0.65) + "rem";
+          document.body.appendChild(el);
+          setTimeout(function () { el.remove(); }, 900);
+        });
+      })();
+
+      // Scroll reveal
+      (function () {
+        var els = document.querySelectorAll(".reveal");
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+        );
+        els.forEach(function (el) { io.observe(el); });
+      })();
+    </script>
   </body>
 </html>
