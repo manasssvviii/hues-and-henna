@@ -26,7 +26,6 @@
   <body>
     <div class="page-glow" aria-hidden="true"></div>
 
-    <!-- floating decorative shapes -->
     <span class="deco-float" aria-hidden="true" style="top:8%;left:4%;font-size:3.2rem;animation-duration:7s;">✿</span>
     <span class="deco-float" aria-hidden="true" style="top:28%;right:3%;font-size:2rem;animation-duration:9s;animation-delay:1.5s;">♥</span>
     <span class="deco-float" aria-hidden="true" style="top:55%;left:2%;font-size:1.6rem;animation-duration:8s;animation-delay:3s;">✦</span>
@@ -37,18 +36,23 @@
         <img src="assets/branding/logo.jpeg" alt="" class="brand-logo" />
         Hues &amp; Henna
       </a>
-      <nav class="top-nav" aria-label="Main navigation">
+      <nav class="top-nav" id="top-nav" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#pricing">Pricing</a>
         <a href="references.html">References</a>
       </nav>
-      <a
-        class="cta-top"
-        href="https://wa.me/23054744690?text=Hi%20Manasvi%2C%20I%20want%20to%20book%20a%20henna%20design."
-        target="_blank"
-        rel="noopener noreferrer"
-        >WhatsApp Booking</a
-      >
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle-icon">≡</span> Menu
+        </button>
+        <a
+          class="cta-top"
+          href="https://wa.me/23054744690?text=Hi%20Manasvi%2C%20I%20want%20to%20book%20a%20henna%20design."
+          target="_blank"
+          rel="noopener noreferrer"
+          >WhatsApp Booking</a
+        >
+      </div>
     </header>
 
     <main>
@@ -117,51 +121,52 @@
       <section class="pricing card reveal" id="pricing">
         <div class="section-head">
           <h2>Henna pricing</h2>
-          <p>Clear rates, straight from the price list.</p>
         </div>
 
         <div class="pricing-grid">
-          <article class="price-item">
+          <a class="price-item" href="references.html#hands">
             <h3>Palm</h3>
             <p>250 RS</p>
-          </article>
-          <article class="price-item">
+          </a>
+          <a class="price-item" href="references.html#hands">
             <h3>Back hand</h3>
             <p>250 RS</p>
-          </article>
-          <article class="price-item">
+          </a>
+          <a class="price-item" href="references.html#hands">
             <h3>Extended palm</h3>
             <p>400 RS</p>
-          </article>
-          <article class="price-item">
+          </a>
+          <a class="price-item" href="references.html#hands">
             <h3>Extended back hand</h3>
             <p>400 RS</p>
-          </article>
-          <article class="price-item">
+          </a>
+          <a class="price-item" href="references.html#hands">
             <h3>Both hands short (palm)</h3>
             <p>500 RS</p>
-          </article>
-          <article class="price-item">
+          </a>
+          <a class="price-item" href="references.html#hands">
             <h3>Both hands short (back)</h3>
             <p>500 RS</p>
-          </article>
-          <article class="price-item">
+          </a>
+          <a class="price-item" href="references.html#hands">
             <h3>Both hands long (front)</h3>
             <p>800 RS</p>
-          </article>
-          <article class="price-item">
+          </a>
+          <a class="price-item" href="references.html#hands">
             <h3>Both hands long (back)</h3>
             <p>800 RS</p>
-          </article>
-          <article class="price-item highlight">
+          </a>
+          <a class="price-item highlight" href="references.html#hands">
             <h3>Both hands front and back (short)</h3>
             <p>950 RS</p>
-          </article>
-          <article class="price-item highlight">
+          </a>
+          <a class="price-item highlight" href="references.html#hands">
             <h3>Both hands front and back (long)</h3>
             <p>1500 RS</p>
-          </article>
+          </a>
         </div>
+
+        <p class="pricing-note">✦ Starting prices — final cost may vary based on design complexity and customisation. More categories coming soon.</p>
 
         <div class="sample-row">
           <figure>
@@ -252,33 +257,52 @@
       // Scroll reveal
       (function () {
         var els = document.querySelectorAll(".reveal");
-        var io = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("in-view");
-                io.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
-        );
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
         els.forEach(function (el) { io.observe(el); });
+      })();
+
+      // Hamburger
+      (function () {
+        var toggle = document.getElementById("nav-toggle");
+        var nav    = document.getElementById("top-nav");
+        if (!toggle || !nav) return;
+        toggle.addEventListener("click", function () {
+          var open = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", open);
+          toggle.querySelector(".nav-toggle-icon").textContent = open ? "✕" : "≡";
+        });
+        nav.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.querySelector(".nav-toggle-icon").textContent = "≡";
+          });
+        });
       })();
 
       // Lightbox
       (function () {
-        var lb     = document.getElementById("lightbox");
-        var lbImg  = document.getElementById("lb-img");
-        var lbCnt  = document.getElementById("lb-counter");
-        var items  = [];
-        var cur    = 0;
+        var lb    = document.getElementById("lightbox");
+        var lbImg = document.getElementById("lb-img");
+        var lbCnt = document.getElementById("lb-counter");
+        var items = [];
+        var cur   = 0;
+        var isTouchDevice = "ontouchstart" in window;
 
-        // Collect sample-row figures
-        document.querySelectorAll(".sample-row figure").forEach(function (fig) {
+        var figs = document.querySelectorAll(".sample-row figure");
+        figs.forEach(function (fig) {
           var img = fig.querySelector("img");
           items.push({ src: img.src, alt: img.alt });
-          fig.addEventListener("click", function () { open(items.length - 1 - (items.length - 1 - items.findIndex(function(x){ return x.src === img.src; }))); });
+        });
+        figs.forEach(function (fig, i) {
+          fig.addEventListener("click", function () { open(i); });
         });
 
         function open(idx) {
@@ -288,6 +312,16 @@
           lbCnt.textContent = (cur + 1) + " / " + items.length;
           lb.classList.add("open");
           document.body.style.overflow = "hidden";
+          // Show swipe hint on first open on touch devices
+          if (isTouchDevice && items.length > 1) {
+            var existing = lb.querySelector(".lb-swipe-hint");
+            if (existing) existing.remove();
+            var hint = document.createElement("span");
+            hint.className = "lb-swipe-hint";
+            hint.textContent = "← swipe to browse →";
+            lb.appendChild(hint);
+            setTimeout(function () { if (hint.parentNode) hint.remove(); }, 2800);
+          }
         }
 
         function close() {
@@ -295,17 +329,6 @@
           document.body.style.overflow = "";
           setTimeout(function () { lbImg.src = ""; }, 300);
         }
-
-        // Re-collect after DOM is ready
-        var figs = document.querySelectorAll(".sample-row figure");
-        items = [];
-        figs.forEach(function (fig) {
-          var img = fig.querySelector("img");
-          items.push({ src: img.src, alt: img.alt });
-        });
-        figs.forEach(function (fig, i) {
-          fig.addEventListener("click", function () { open(i); });
-        });
 
         document.getElementById("lb-close").addEventListener("click", close);
         document.getElementById("lb-prev").addEventListener("click", function () { open(cur - 1); });
@@ -317,6 +340,22 @@
           if (e.key === "ArrowLeft")  open(cur - 1);
           if (e.key === "ArrowRight") open(cur + 1);
         });
+
+        // Touch swipe
+        var tx = 0, ty = 0;
+        lb.addEventListener("touchstart", function (e) {
+          tx = e.touches[0].clientX;
+          ty = e.touches[0].clientY;
+        }, { passive: true });
+        lb.addEventListener("touchend", function (e) {
+          var dx = e.changedTouches[0].clientX - tx;
+          var dy = e.changedTouches[0].clientY - ty;
+          if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 48) {
+            dx < 0 ? open(cur + 1) : open(cur - 1);
+          } else if (dy > 80) {
+            close();
+          }
+        }, { passive: true });
       })();
     </script>
   </body>

@@ -19,7 +19,6 @@
   <body>
     <div class="page-glow" aria-hidden="true"></div>
 
-    <!-- floating decorative shapes -->
     <span class="deco-float" aria-hidden="true" style="top:6%;left:4%;font-size:3rem;animation-duration:8s;">✿</span>
     <span class="deco-float" aria-hidden="true" style="top:35%;right:3%;font-size:1.8rem;animation-duration:10s;animation-delay:2s;">♥</span>
     <span class="deco-float" aria-hidden="true" style="top:65%;left:2%;font-size:1.5rem;animation-duration:7s;animation-delay:4s;">✦</span>
@@ -29,18 +28,23 @@
         <img src="assets/branding/logo.jpeg" alt="" class="brand-logo" />
         Hues &amp; Henna
       </a>
-      <nav class="top-nav" aria-label="Main navigation">
+      <nav class="top-nav" id="top-nav" aria-label="Main navigation">
         <a href="index.html#about">About</a>
         <a href="index.html#pricing">Pricing</a>
         <a href="references.html" class="active">References</a>
       </nav>
-      <a
-        class="cta-top"
-        href="https://wa.me/23054744690?text=Hi%20Manasvi%2C%20I%20want%20to%20book%20a%20henna%20design."
-        target="_blank"
-        rel="noopener noreferrer"
-        >WhatsApp Booking</a
-      >
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="nav-toggle-icon">≡</span> Menu
+        </button>
+        <a
+          class="cta-top"
+          href="https://wa.me/23054744690?text=Hi%20Manasvi%2C%20I%20want%20to%20book%20a%20henna%20design."
+          target="_blank"
+          rel="noopener noreferrer"
+          >WhatsApp Booking</a
+        >
+      </div>
     </header>
 
     <main>
@@ -52,48 +56,48 @@
         </p>
       </section>
 
-      <section class="reference-group card reveal">
+      <section class="reference-group card reveal" id="hands">
         <h2>Hands</h2>
         <div class="reference-grid">
-          <a class="reference-card" href="assets/gallery/hands/hands-01.jpeg" ><img src="assets/gallery/hands/hands-01.jpeg" alt="Hand henna — intricate back-hand design" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-02.jpeg" ><img src="assets/gallery/hands/hands-02.jpeg" alt="Hand henna — back-hand full view" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-03.jpeg" ><img src="assets/gallery/hands/hands-03.jpeg" alt="Hand henna — minimal back-hand design" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-04.jpeg" ><img src="assets/gallery/hands/hands-04.jpeg" alt="Hand henna — mandala back-hand" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-05.jpeg" ><img src="assets/gallery/hands/hands-05.jpeg" alt="Hand henna — botanical floral vine" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-06.jpeg" ><img src="assets/gallery/hands/hands-06.jpeg" alt="Hand henna — elaborate floral with bangles" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-07.jpeg" ><img src="assets/gallery/hands/hands-07.jpeg" alt="Hand henna — simple flower design" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-08.jpeg" ><img src="assets/gallery/hands/hands-08.jpeg" alt="Hand henna — floral with vine" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-09.jpeg" ><img src="assets/gallery/hands/hands-09.jpeg" alt="Hand henna — sparkle star design" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-10.jpeg" ><img src="assets/gallery/hands/hands-10.jpeg" alt="Hand henna — minimal scallop design" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-11.jpeg" ><img src="assets/gallery/hands/hands-11.jpeg" alt="Hand henna — floral lattice with pink nails" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-12.jpeg" ><img src="assets/gallery/hands/hands-12.jpeg" alt="Hand henna — full-finger floral lattice" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-13.jpeg" ><img src="assets/gallery/hands/hands-13.jpeg" alt="Hand henna — both hands outdoors" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-14.jpeg" ><img src="assets/gallery/hands/hands-14.jpeg" alt="Hand henna — forearm mandala design" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/hands/hands-15.jpeg" ><img src="assets/gallery/hands/hands-15.jpeg" alt="Hand henna — both hands asymmetric designs" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-01.jpeg"><img src="assets/gallery/hands/hands-01.jpeg" alt="Hand henna — intricate back-hand design" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-02.jpeg"><img src="assets/gallery/hands/hands-02.jpeg" alt="Hand henna — back-hand full view" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-03.jpeg"><img src="assets/gallery/hands/hands-03.jpeg" alt="Hand henna — minimal back-hand design" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-04.jpeg"><img src="assets/gallery/hands/hands-04.jpeg" alt="Hand henna — mandala back-hand" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-05.jpeg"><img src="assets/gallery/hands/hands-05.jpeg" alt="Hand henna — botanical floral vine" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-06.jpeg"><img src="assets/gallery/hands/hands-06.jpeg" alt="Hand henna — elaborate floral with bangles" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-07.jpeg"><img src="assets/gallery/hands/hands-07.jpeg" alt="Hand henna — simple flower design" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-08.jpeg"><img src="assets/gallery/hands/hands-08.jpeg" alt="Hand henna — floral with vine" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-09.jpeg"><img src="assets/gallery/hands/hands-09.jpeg" alt="Hand henna — sparkle star design" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-10.jpeg"><img src="assets/gallery/hands/hands-10.jpeg" alt="Hand henna — minimal scallop design" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-11.jpeg"><img src="assets/gallery/hands/hands-11.jpeg" alt="Hand henna — floral lattice with pink nails" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-12.jpeg"><img src="assets/gallery/hands/hands-12.jpeg" alt="Hand henna — full-finger floral lattice" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-13.jpeg"><img src="assets/gallery/hands/hands-13.jpeg" alt="Hand henna — both hands outdoors" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-14.jpeg"><img src="assets/gallery/hands/hands-14.jpeg" alt="Hand henna — forearm mandala design" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/hands/hands-15.jpeg"><img src="assets/gallery/hands/hands-15.jpeg" alt="Hand henna — both hands asymmetric designs" loading="lazy" /></a>
         </div>
       </section>
 
-      <section class="reference-group card reveal">
+      <section class="reference-group card reveal" id="shoulders">
         <h2>Shoulders</h2>
         <div class="reference-grid">
-          <a class="reference-card" href="assets/gallery/shoulders/shoulders-01.jpeg" ><img src="assets/gallery/shoulders/shoulders-01.jpeg" alt="Shoulder henna — floral branch close-up" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/shoulders/shoulders-02.jpeg" ><img src="assets/gallery/shoulders/shoulders-02.jpeg" alt="Shoulder henna — floral branch wide view" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/shoulders/shoulders-01.jpeg"><img src="assets/gallery/shoulders/shoulders-01.jpeg" alt="Shoulder henna — floral branch close-up" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/shoulders/shoulders-02.jpeg"><img src="assets/gallery/shoulders/shoulders-02.jpeg" alt="Shoulder henna — floral branch wide view" loading="lazy" /></a>
         </div>
       </section>
 
-      <section class="reference-group card reveal">
+      <section class="reference-group card reveal" id="back">
         <h2>Back designs</h2>
         <div class="reference-grid">
-          <a class="reference-card" href="assets/gallery/back/back-featured.jpeg" ><img src="assets/gallery/back/back-featured.jpeg" alt="Back henna — collage of multiple designs" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/back/back-01.jpeg" ><img src="assets/gallery/back/back-01.jpeg" alt="Back henna — large rose bouquet upper back" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/back/back-02.jpeg" ><img src="assets/gallery/back/back-02.jpeg" alt="Back henna — roses on shoulder close-up" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/back/back-03.jpeg" ><img src="assets/gallery/back/back-03.jpeg" alt="Back henna — roses from behind" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/back/back-04.jpeg" ><img src="assets/gallery/back/back-04.jpeg" alt="Back henna — full spine floral vine" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/back/back-05.jpeg" ><img src="assets/gallery/back/back-05.jpeg" alt="Back henna — tribal heart lower back" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/back/back-06.jpeg" ><img src="assets/gallery/back/back-06.jpeg" alt="Back henna — rose stem spine" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/back/back-07.jpeg" ><img src="assets/gallery/back/back-07.jpeg" alt="Back henna — horizontal rose design" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/back/back-08.jpeg" ><img src="assets/gallery/back/back-08.jpeg" alt="Back henna — dragon design" loading="lazy" /></a>
-          <a class="reference-card" href="assets/gallery/back/back-09.jpeg" ><img src="assets/gallery/back/back-09.jpeg" alt="Back henna — butterfly outline upper back" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/back/back-featured.jpeg"><img src="assets/gallery/back/back-featured.jpeg" alt="Back henna — collage of multiple designs" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/back/back-01.jpeg"><img src="assets/gallery/back/back-01.jpeg" alt="Back henna — large rose bouquet upper back" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/back/back-02.jpeg"><img src="assets/gallery/back/back-02.jpeg" alt="Back henna — roses on shoulder close-up" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/back/back-03.jpeg"><img src="assets/gallery/back/back-03.jpeg" alt="Back henna — roses from behind" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/back/back-04.jpeg"><img src="assets/gallery/back/back-04.jpeg" alt="Back henna — full spine floral vine" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/back/back-05.jpeg"><img src="assets/gallery/back/back-05.jpeg" alt="Back henna — tribal heart lower back" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/back/back-06.jpeg"><img src="assets/gallery/back/back-06.jpeg" alt="Back henna — rose stem spine" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/back/back-07.jpeg"><img src="assets/gallery/back/back-07.jpeg" alt="Back henna — horizontal rose design" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/back/back-08.jpeg"><img src="assets/gallery/back/back-08.jpeg" alt="Back henna — dragon design" loading="lazy" /></a>
+          <a class="reference-card" href="assets/gallery/back/back-09.jpeg"><img src="assets/gallery/back/back-09.jpeg" alt="Back henna — butterfly outline upper back" loading="lazy" /></a>
         </div>
       </section>
 
@@ -154,18 +158,34 @@
       // Scroll reveal
       (function () {
         var els = document.querySelectorAll(".reveal");
-        var io = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("in-view");
-                io.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
-        );
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
         els.forEach(function (el) { io.observe(el); });
+      })();
+
+      // Hamburger
+      (function () {
+        var toggle = document.getElementById("nav-toggle");
+        var nav    = document.getElementById("top-nav");
+        if (!toggle || !nav) return;
+        toggle.addEventListener("click", function () {
+          var open = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", open);
+          toggle.querySelector(".nav-toggle-icon").textContent = open ? "✕" : "≡";
+        });
+        nav.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", function () {
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.querySelector(".nav-toggle-icon").textContent = "≡";
+          });
+        });
       })();
 
       // Lightbox
@@ -175,6 +195,8 @@
         var lbCnt = document.getElementById("lb-counter");
         var cards = Array.from(document.querySelectorAll(".reference-card"));
         var cur   = 0;
+        var isTouchDevice = "ontouchstart" in window;
+        var hintShown = false;
 
         function open(idx) {
           cur = (idx + cards.length) % cards.length;
@@ -184,6 +206,15 @@
           lbCnt.textContent = (cur + 1) + " / " + cards.length;
           lb.classList.add("open");
           document.body.style.overflow = "hidden";
+          // Swipe hint on first open on touch
+          if (isTouchDevice && !hintShown) {
+            hintShown = true;
+            var hint = document.createElement("span");
+            hint.className = "lb-swipe-hint";
+            hint.textContent = "← swipe to browse →";
+            lb.appendChild(hint);
+            setTimeout(function () { if (hint.parentNode) hint.remove(); }, 2800);
+          }
         }
 
         function close() {
@@ -209,6 +240,22 @@
           if (e.key === "ArrowLeft")  open(cur - 1);
           if (e.key === "ArrowRight") open(cur + 1);
         });
+
+        // Touch swipe
+        var tx = 0, ty = 0;
+        lb.addEventListener("touchstart", function (e) {
+          tx = e.touches[0].clientX;
+          ty = e.touches[0].clientY;
+        }, { passive: true });
+        lb.addEventListener("touchend", function (e) {
+          var dx = e.changedTouches[0].clientX - tx;
+          var dy = e.changedTouches[0].clientY - ty;
+          if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 48) {
+            dx < 0 ? open(cur + 1) : open(cur - 1);
+          } else if (dy > 80) {
+            close();
+          }
+        }, { passive: true });
       })();
     </script>
   </body>
