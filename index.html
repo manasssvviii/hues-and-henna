@@ -33,7 +33,10 @@
     <span class="deco-float" aria-hidden="true" style="top:75%;right:4%;font-size:2.8rem;animation-duration:10s;animation-delay:0.8s;">✿</span>
 
     <header class="site-header">
-      <a href="index.html" class="brand-link">Hues &amp; Henna</a>
+      <a href="index.html" class="brand-link">
+        <img src="assets/branding/logo.jpeg" alt="" class="brand-logo" />
+        Hues &amp; Henna
+      </a>
       <nav class="top-nav" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#pricing">Pricing</a>
@@ -216,6 +219,15 @@
       >WhatsApp Booking</a
     >
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <img class="lightbox-img" id="lb-img" src="" alt="" />
+      <button class="lb-btn lb-close" id="lb-close" aria-label="Close">✕</button>
+      <button class="lb-btn lb-prev"  id="lb-prev"  aria-label="Previous">‹</button>
+      <button class="lb-btn lb-next"  id="lb-next"  aria-label="Next">›</button>
+      <span class="lb-counter" id="lb-counter"></span>
+    </div>
+
     <script>
       // Heart cursor trail
       (function () {
@@ -252,6 +264,59 @@
           { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
         );
         els.forEach(function (el) { io.observe(el); });
+      })();
+
+      // Lightbox
+      (function () {
+        var lb     = document.getElementById("lightbox");
+        var lbImg  = document.getElementById("lb-img");
+        var lbCnt  = document.getElementById("lb-counter");
+        var items  = [];
+        var cur    = 0;
+
+        // Collect sample-row figures
+        document.querySelectorAll(".sample-row figure").forEach(function (fig) {
+          var img = fig.querySelector("img");
+          items.push({ src: img.src, alt: img.alt });
+          fig.addEventListener("click", function () { open(items.length - 1 - (items.length - 1 - items.findIndex(function(x){ return x.src === img.src; }))); });
+        });
+
+        function open(idx) {
+          cur = (idx + items.length) % items.length;
+          lbImg.src = items[cur].src;
+          lbImg.alt = items[cur].alt;
+          lbCnt.textContent = (cur + 1) + " / " + items.length;
+          lb.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+
+        function close() {
+          lb.classList.remove("open");
+          document.body.style.overflow = "";
+          setTimeout(function () { lbImg.src = ""; }, 300);
+        }
+
+        // Re-collect after DOM is ready
+        var figs = document.querySelectorAll(".sample-row figure");
+        items = [];
+        figs.forEach(function (fig) {
+          var img = fig.querySelector("img");
+          items.push({ src: img.src, alt: img.alt });
+        });
+        figs.forEach(function (fig, i) {
+          fig.addEventListener("click", function () { open(i); });
+        });
+
+        document.getElementById("lb-close").addEventListener("click", close);
+        document.getElementById("lb-prev").addEventListener("click", function () { open(cur - 1); });
+        document.getElementById("lb-next").addEventListener("click", function () { open(cur + 1); });
+        lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+        document.addEventListener("keydown", function (e) {
+          if (!lb.classList.contains("open")) return;
+          if (e.key === "Escape")     close();
+          if (e.key === "ArrowLeft")  open(cur - 1);
+          if (e.key === "ArrowRight") open(cur + 1);
+        });
       })();
     </script>
   </body>
